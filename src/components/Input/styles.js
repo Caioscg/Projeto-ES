@@ -5,11 +5,10 @@ export const Container = styled.div`
     display: flex;
     align-items: center;
 
-    background-color: ${({ theme }) => theme.COLORS.WHITE_200};
+    background-color: ${({ theme }) => theme.COLORS.BACKGROUND_200};
     color: ${({ theme }) => theme.COLORS.GRAY_400};
-    border: 1px solid ${({ theme }) => theme.COLORS.WHITE_300};
 
-    border-radius: 6px;
+    border-radius: 10px;
 
     > input {
         height: 56px;
@@ -17,9 +16,10 @@ export const Container = styled.div`
 
         padding: 12px;
 
-        color: ${({ theme }) => theme.COLORS.GRAY_400};
-        background: ${({ theme }) => theme.COLORS.WHITE_200};;
+        color: ${({ theme }) => theme.COLORS.GRAY_300};
+        background: ${({ theme }) => theme.COLORS.BACKGROUND_200};;
         border: 0;
+        border-radius: 10px;
 
         &::placeholder {
             color: ${({ theme }) => theme.COLORS.GRAY_100};

@@ -2,14 +2,14 @@ import { Container, Form } from "./styles";
 import { Input } from "../../components/Input";
 import { Button } from "../../components/Button";
 
-import LogoUFG from "../../assets/LogoUFG.png"
+import logo from "../../assets/logo.png"
 
 import { FiUser, FiLock } from "react-icons/fi"
 
 export function SignIn() {
     return(
         <Container>
-            <img src={LogoUFG} alt="Logo da UFG" />
+            <img src={logo} alt="Logo da UFG organized" />
             <Form>
                 <h1>Autenticação UFG</h1>
 

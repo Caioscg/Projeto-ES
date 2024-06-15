@@ -5,11 +5,10 @@ export const Container = styled.div`
 
     display: flex;
     align-items: center;
-    justify-content: center;
-    gap: 100px;
+    justify-content: space-evenly;
 
     > img {
-        width: 267px;
+        width: 260px;
     }
 `
 
@@ -18,7 +17,7 @@ export const Form = styled.form`
 
     display: flex;
     flex-direction: column;
-    gap: 40px;
+    gap: 48px;
 
     h1 {
         text-align: center;
