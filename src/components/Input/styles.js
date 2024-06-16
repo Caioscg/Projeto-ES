@@ -5,8 +5,10 @@ export const Container = styled.div`
     display: flex;
     align-items: center;
 
-    background-color: ${({ theme }) => theme.COLORS.BACKGROUND_200};
+    background-color: transparent;
     color: ${({ theme }) => theme.COLORS.GRAY_400};
+
+    border: 1px solid ${({ theme }) => theme.COLORS.BACKGROUND_200};
 
     border-radius: 10px;
 
@@ -17,7 +19,7 @@ export const Container = styled.div`
         padding: 12px;
 
         color: ${({ theme }) => theme.COLORS.GRAY_300};
-        background: ${({ theme }) => theme.COLORS.BACKGROUND_200};;
+        background: transparent;
         border: 0;
         border-radius: 10px;
 

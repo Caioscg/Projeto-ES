@@ -6,7 +6,19 @@ import logo from "../../assets/logo.png"
 
 import { FiUser, FiLock } from "react-icons/fi"
 
+import { useAuth } from "../../hooks/auth";
+import { useState } from "react";
+
 export function SignIn() {
+    const [login, setLogin] = useState("")
+    const [password, setPassword] = useState("")
+
+    const { signIn } = useAuth()
+
+    function handleSignIn() {
+        signIn({ login, password })
+    }
+
     return(
         <Container>
             <img src={logo} alt="Logo da UFG organized" />
@@ -14,14 +26,26 @@ export function SignIn() {
                 <h1>Autenticação UFG</h1>
 
                 <div className="inputs">
-                        <label htmlFor="">Login Único*</label>
-                        <Input placeholder="Insira seu Login da UFG" icon={FiUser} type="text"/>
+                        <label htmlFor="login">Login Único*</label>
+                        <Input 
+                            placeholder="Insira seu Login da UFG" 
+                            icon={FiUser} 
+                            type="text" 
+                            id="login"
+                            onChange={e => setLogin(e.target.value)}
+                        />
 
-                        <label htmlFor="">Senha*</label>
-                        <Input placeholder="Insira sua senha" icon={FiLock} type="password"/>
+                        <label htmlFor="password">Senha*</label>
+                        <Input 
+                            placeholder="Insira sua senha" 
+                            icon={FiLock} 
+                            type="password" 
+                            id="password"
+                            onChange={e => setPassword(e.target.value)}
+                        />
                 </div>
 
-                <Button title="Entrar"/>
+                <Button title="Entrar" onClick={handleSignIn}/>
 
             </Form>
         </Container>

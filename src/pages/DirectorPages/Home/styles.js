@@ -6,20 +6,35 @@ export const Container = styled.div`
 
     display: grid;
     grid-template-columns: 280px auto;
-    grid-template-rows: 116px auto;
+    grid-template-rows: 116px 180px auto;
     grid-template-areas:
     "header header"
+    "menu title"
     "menu content";
 
-    > main {
-        grid-area: content;
+    ::-webkit-scrollbar {
+        width: 12px;
+    }
 
-        padding: 88px 150px;
+    ::-webkit-scrollbar-track {
+        background-color: transparent;
+        margin-block: 12px;
+        margin-bottom: 40px;
+    }
 
-        .title {
+    ::-webkit-scrollbar-thumb {
+        background-color: ${({ theme }) => theme.COLORS.BACKGROUND_300};
+        border-radius: 100vw;
+        border: 3px solid ${ ({ theme }) => theme.COLORS.BACKGROUND_100};
+    }
+
+    .title {
+            grid-area: title;
+
             display: flex;
             align-items: end;
             gap: 10px;
+            margin: 0 150px;
 
             border-bottom: 1px solid ${({ theme }) => theme.COLORS.BACKGROUND_200};
 
@@ -32,6 +47,14 @@ export const Container = styled.div`
                 font-weight: 700;
             }
         }
+
+    > main {
+        grid-area: content;
+
+        margin: 0 150px;
+        padding-bottom: 50px;
+
+        overflow-x: auto;
     }
 `
 
@@ -41,7 +64,6 @@ export const Menu = styled.div`
     grid-area: menu;
 
     margin-top: 24px;
-    margin-bottom: 24px;
     padding: 24px;
 
     border-right: 1px solid ${({ theme }) => theme.COLORS.BACKGROUND_200};
@@ -51,7 +73,6 @@ export const Menu = styled.div`
 
         display: flex;
         flex-direction: column;
-        align-items: center;
         gap: 48px;
 
         margin-top: 48px;

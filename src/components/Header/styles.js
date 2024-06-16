@@ -15,6 +15,13 @@ export const Container = styled.div`
 
     > img {
         width: 92px;
+        cursor: pointer;
+
+        transition: filter 700ms;
+
+        &:hover {
+            filter: drop-shadow(0 0 1.5em ${({ theme }) => theme.COLORS.BACKGROUND_100});
+        }
     }
 
     > div {
