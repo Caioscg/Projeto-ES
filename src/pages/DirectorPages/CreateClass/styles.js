@@ -23,21 +23,21 @@ export const Container = styled.div`
         margin: 68px 150px 0;
     }
     .title {
-            display: flex;
-            align-items: end;
-            gap: 10px;
+        display: flex;
+        align-items: end;
+        gap: 10px;
 
-            border-bottom: 1px solid ${({ theme }) => theme.COLORS.BACKGROUND_200};
+        border-bottom: 1px solid ${({ theme }) => theme.COLORS.BACKGROUND_200};
 
-            h1 {
-                font-size: 36px;
-            }
-
-            span {
-                margin-bottom: 5px;
-                font-weight: 700;
-            }
+        h1 {
+            font-size: 36px;
         }
+
+        span {
+            margin-bottom: 5px;
+            font-weight: 700;
+        }
+    }
 `
 
 export const Form = styled.form`

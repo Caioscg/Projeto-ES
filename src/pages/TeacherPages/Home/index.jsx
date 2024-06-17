@@ -9,22 +9,21 @@ import { useState, useEffect } from "react";
 import { PropagateLoader } from "react-spinners"
 
 import { api } from "../../../services/api";
+import { useAuth } from "../../../hooks/auth";
 
 export function Home() {
     const [ classes, setClasses ] = useState([])
     const [ loading, setLoading ] = useState(false)
 
-    const navigate = useNavigate()
+    const { user } = useAuth()
 
-    function handleNavigateClass() {
-        navigate("/createclass")
-    }
+    const navigate = useNavigate()
 
     useEffect(() => {
         async function FetchClasses() {
             setLoading(true)
 
-            const response = await api.get("/class")
+            const response = await api.get(`/class/${user.id}`)
             setClasses(response.data.classes)
 
             setLoading(false)
@@ -37,8 +36,9 @@ export function Home() {
             <Header />
             <Menu>
                 <div className="buttons">
-                    <Button title="Criar Turmas" onClick={handleNavigateClass}/>
-                    <Button title="Semestre"/>
+                    <Button title="Mensagens"/>
+                    <Button title="Avaliação padronizada"/>
+                    <Button title="Pesquisa de satisfação"/>
                 </div>
             </Menu>
             <div className="title">

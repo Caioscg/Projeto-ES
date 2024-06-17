@@ -20,7 +20,7 @@ export const Container = styled.div`
         transition: filter 700ms;
 
         &:hover {
-            filter: drop-shadow(0 0 1.5em ${({ theme }) => theme.COLORS.BACKGROUND_100});
+            filter: drop-shadow(0 0 1.5em ${({ theme }) => theme.COLORS.WHITE_200});
         }
     }
 

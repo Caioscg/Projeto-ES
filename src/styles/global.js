@@ -32,4 +32,9 @@ export default createGlobalStyle`
     button:hover, a:hover {
         filter: brightness(0.80);
     }
+
+    .spinner {
+        display: block;
+        margin: auto;
+    }
 `

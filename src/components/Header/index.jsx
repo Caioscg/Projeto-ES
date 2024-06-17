@@ -8,7 +8,7 @@ import { useAuth } from "../../hooks/auth";
 import { useNavigate } from "react-router-dom";
 
 export function Header() {
-    const { signOut } = useAuth()
+    const { signOut, user } = useAuth()
     const navigate = useNavigate()
 
     function handleSignOut() {
@@ -24,7 +24,7 @@ export function Header() {
             <img src={logo_no_brand} alt="Logo da UFG organized" onClick={handleNavigateHome}/>
 
             <div>
-                <span>Bem vindo, Caio!</span>
+                <span>Bem vindo, {user.name}!</span>
                 <FiLogOut size={32} onClick={handleSignOut}/>
             </div>
         </Container>
