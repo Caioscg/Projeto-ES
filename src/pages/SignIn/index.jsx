@@ -13,10 +13,16 @@ export function SignIn() {
     const [login, setLogin] = useState("")
     const [password, setPassword] = useState("")
 
+    const [ loading, setLoading ] = useState(false)
+
     const { signIn } = useAuth()
 
     function handleSignIn() {
+        setLoading(true)
+
         signIn({ login, password })
+
+        setLoading(false)
     }
 
     return(
