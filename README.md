@@ -60,6 +60,12 @@ Install the dependencies
   npm install
 ```
 
+Change the api baseURL to the dev one
+
+```bash
+  ./src/services/api.js
+```
+
 Start the server
 
 ```bash
