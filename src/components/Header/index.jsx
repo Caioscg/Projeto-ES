@@ -12,6 +12,7 @@ export function Header() {
     const navigate = useNavigate()
 
     function handleSignOut() {
+        navigate("/")
         signOut()
     }
 

@@ -19,6 +19,10 @@ export function Home() {
 
     const navigate = useNavigate()
 
+    function navigateClass() {
+        navigate("/class")
+    }
+
     useEffect(() => {
         async function FetchClasses() {
             setLoading(true)
@@ -64,6 +68,7 @@ export function Home() {
                             <Class
                                 key={String(classe.id)}
                                 data={classe}
+                                onClick={navigateClass}
                             />
                         ))
                     } 
