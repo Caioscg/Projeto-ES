@@ -13,6 +13,10 @@ export function Class() {
         navigate(-1)
     }
 
+    function handleGoPlan() {
+        navigate("/plan")
+    }
+
     return(
         <Container>
             <Header />
@@ -42,7 +46,7 @@ export function Class() {
                                 <span>109/CAB-CAS</span>
                             </div>
                         </div>
-                        <Button title="Submeter Plano de ensino"/>
+                        <Button title="Submeter Plano de ensino" onClick={handleGoPlan}/>
                     </div>
                     <div className="students">
                         <div className="head">
