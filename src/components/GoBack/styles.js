@@ -6,5 +6,7 @@ export const Container = styled.a`
     justify-content: flex-start;
     gap: 8px;
 
+    width: fit-content;
+
     color: ${({ theme }) => theme.COLORS.GRAY_300};
 `

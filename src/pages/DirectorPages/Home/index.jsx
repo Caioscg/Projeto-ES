@@ -20,6 +20,10 @@ export function Home() {
         navigate("/createclass")
     }
 
+    function navigatePlan() {
+        navigate("/plans")
+    }
+
     useEffect(() => {
         async function FetchClasses() {
             setLoading(true)
@@ -38,7 +42,7 @@ export function Home() {
             <Menu>
                 <div className="buttons">
                     <Button title="Criar Turmas" onClick={handleNavigateClass}/>
-                    <Button title="Semestre"/>
+                    <Button title="Plano de ensino" onClick={navigatePlan}/>
                 </div>
             </Menu>
             <div className="title">

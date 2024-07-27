@@ -8,8 +8,8 @@ export function TeacherRoutes() {
     return (
         <Routes>
             <Route path="/" element={<Home />} />
-            <Route path="/class" element={<Class />} />
-            <Route path="/plan" element={<Plan />} />
+            <Route path="/class/:id" element={<Class />} />
+            <Route path="/plan/:id" element={<Plan />} />
         </Routes>
     )
 }

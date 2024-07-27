@@ -2,11 +2,17 @@ import { Container, Menu } from "./styles";
 import { Header } from "../../../components/Header"
 import { Button } from "../../../components/Button"
 import { StudentSpan } from "../../../components/StudentSpan"
+import { GoBack } from "../../../components/GoBack"
 
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
+import { useEffect, useState } from "react";
+
+import { api } from "../../../services/api";
 
 export function Class() {
+    const [ classe, setClasse ] = useState("");
 
+    const params = useParams()
     const navigate = useNavigate()
 
     function handleGoBack() {
@@ -14,8 +20,16 @@ export function Class() {
     }
 
     function handleGoPlan() {
-        navigate("/plan")
+        navigate(`/plan/${params.id}`)
     }
+
+    useEffect(() => {
+        async function FetchClass() {
+            const response = await api.get(`/class/details/${params.id}`)
+            setClasse(response.data.classe[0])
+        }
+        FetchClass()
+    }, [])
 
     return(
         <Container>
@@ -29,8 +43,11 @@ export function Class() {
                 </div>
             </Menu>
 
-            <div className="title">
-                <h1>Turma Software Básico</h1>
+            <div className="head">
+                <GoBack onClick={handleGoBack}/>
+                <div className="title">
+                    <h1>{classe.discipline}</h1>
+                </div>
             </div>
 
             <main>
@@ -39,17 +56,17 @@ export function Class() {
                         <div>
                             <div className="time">
                                 <p>Horário:</p>
-                                <span>24M23</span>
+                                <span>{classe.time}</span>
                             </div>
                             <div className="classroom">
                                 <p>Sala:</p>
-                                <span>109/CAB-CAS</span>
+                                <span>{classe.classroom}</span>
                             </div>
                         </div>
-                        <Button title="Submeter Plano de ensino" onClick={handleGoPlan}/>
+                        <Button title="Plano de ensino" onClick={handleGoPlan}/>
                     </div>
                     <div className="students">
-                        <div className="head">
+                        <div className="st-head">
                             <span>Alunos</span>
                             <span>Curso</span>
                         </div>

@@ -3,16 +3,10 @@ import { Header } from "../../../components/Header";
 import { Button } from "../../../components/Button";
 import { GoBack } from "../../../components/GoBack";
 
-import { useNavigate, useParams } from "react-router-dom";
-import { useState, useEffect } from "react";
-
-import { api } from "../../../services/api";
+import { useNavigate } from "react-router-dom";
 
 
-export function Plan() {
-    const [ plan, setPlan ] = useState("")
-    
-    const params = useParams()
+export function PlanChanges() {
     const navigate = useNavigate();
 
     function handleNavigateClass() {
@@ -22,14 +16,6 @@ export function Plan() {
     function handleNavigateHome() {
         navigate("/")
     }
-
-    useEffect(() => {
-        async function FetchPlan() {
-            const response = await api.get(`/plan/${params.id}`)
-            setPlan(response.data.plan[0])
-        }
-        FetchPlan()
-    }, [])
 
     return (
         <Container>
@@ -46,16 +32,12 @@ export function Plan() {
             <div className="head">
                 <GoBack onClick={handleNavigateClass}/>
                 <div className="title">
-                    <h1>Plano de ensino</h1>
+                    <h1>Sugerir mudanças no Plano de ensino</h1>
                 </div>
             </div>
 
             <main>
-                {
-                    plan.description ? <textarea value={plan.description} disabled></textarea> 
-                    : plan.plan_changes ? <textarea value={plan.plan_changes}></textarea> 
-                    : <textarea placeholder="Escreva aqui o plano de ensino..."></textarea>
-                }
+                <textarea placeholder="Escreva aqui as mudanças sugeridas..."></textarea>
 
                 <Button title="Enviar"/>
             </main>

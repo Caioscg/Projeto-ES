@@ -19,8 +19,8 @@ export function Home() {
 
     const navigate = useNavigate()
 
-    function navigateClass() {
-        navigate("/class")
+    function navigateClass(classe_id) {
+        navigate(`/class/${classe_id}`)
     }
 
     useEffect(() => {
@@ -68,7 +68,7 @@ export function Home() {
                             <Class
                                 key={String(classe.id)}
                                 data={classe}
-                                onClick={navigateClass}
+                                onClick={() => navigateClass(classe.id)}
                             />
                         ))
                     } 

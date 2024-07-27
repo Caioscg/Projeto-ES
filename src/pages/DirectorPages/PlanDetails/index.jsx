@@ -3,16 +3,10 @@ import { Header } from "../../../components/Header";
 import { Button } from "../../../components/Button";
 import { GoBack } from "../../../components/GoBack";
 
-import { useNavigate, useParams } from "react-router-dom";
-import { useState, useEffect } from "react";
-
-import { api } from "../../../services/api";
+import { useNavigate } from "react-router-dom";
 
 
-export function Plan() {
-    const [ plan, setPlan ] = useState("")
-    
-    const params = useParams()
+export function PlanDetails() {
     const navigate = useNavigate();
 
     function handleNavigateClass() {
@@ -23,13 +17,9 @@ export function Plan() {
         navigate("/")
     }
 
-    useEffect(() => {
-        async function FetchPlan() {
-            const response = await api.get(`/plan/${params.id}`)
-            setPlan(response.data.plan[0])
-        }
-        FetchPlan()
-    }, [])
+    function handlePlanChanges() {
+        navigate("/plans/changes")
+    }
 
     return (
         <Container>
@@ -46,18 +36,17 @@ export function Plan() {
             <div className="head">
                 <GoBack onClick={handleNavigateClass}/>
                 <div className="title">
-                    <h1>Plano de ensino</h1>
+                    <h1>Submeter Plano de ensino</h1>
                 </div>
             </div>
 
             <main>
-                {
-                    plan.description ? <textarea value={plan.description} disabled></textarea> 
-                    : plan.plan_changes ? <textarea value={plan.plan_changes}></textarea> 
-                    : <textarea placeholder="Escreva aqui o plano de ensino..."></textarea>
-                }
+                <textarea disabled>Plano de ensino escrito...</textarea>
 
-                <Button title="Enviar"/>
+                <div className="btns">
+                    <Button title="Aprovar plano de ensino"/>
+                    <Button title="Sugerir mudanças" onClick={handlePlanChanges}/>
+                </div>
             </main>
         </Container>
     )

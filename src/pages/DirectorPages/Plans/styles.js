@@ -6,7 +6,7 @@ export const Container = styled.div`
 
     display: grid;
     grid-template-columns: 280px auto;
-    grid-template-rows: 116px 180px auto;
+    grid-template-rows: 116px 120px auto;
     grid-template-areas:
     "header header"
     "menu title"
@@ -39,7 +39,7 @@ export const Container = styled.div`
         margin: 48px 150px 0;
         .title {
                 border-bottom: 1px solid ${({ theme }) => theme.COLORS.BACKGROUND_200};
-
+    
                 h1 {
                     font-size: 36px;
                 }
@@ -49,60 +49,13 @@ export const Container = styled.div`
     > main {
         grid-area: content;
 
-        margin: 70px 270px 100px;
-        padding-bottom: 50px;
+        margin: 70px 200px 50px;
 
-        overflow-x: hidden; 
+        overflow-x: auto;
 
-        .class {
-            display: flex;
-            justify-content: space-between;
-            height: 100%;
-        }
-
-        .infos {
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between;
-
-            > div {
-                display: flex;
-                flex-direction: column;
-                gap: 56px;
-            }
-
-            p {
-                font-size: 18px;
-                font-weight: 600;
-
-                padding: 0 12px 0 2px;
-                width: fit-content;
-
-                margin-bottom: 8px;
-
-                border-bottom: 1px solid ${({ theme }) => theme.COLORS.BACKGROUND_200};
-            }
-        }
-
-        .students {
-            .st-head {
-                display: flex;
-                align-items: center;
-
-                padding: 0 4px;
-
-                border-bottom: 1px solid ${({ theme }) => theme.COLORS.BACKGROUND_200};
-
-                font-weight: 500;
-                color: ${({ theme }) => theme.COLORS.GRAY_100};
-
-                span {
-                    width: 100%;
-                    text-align: left;
-                }
-            }
-            overflow-y: scroll;
-        }
+        display: flex;
+        flex-direction: column;
+        gap: 32px;
     }
 
 `
@@ -125,5 +78,32 @@ export const Menu = styled.div`
         gap: 48px;
 
         margin-top: 48px;
+    }
+`
+
+export const Plan = styled.div`
+    min-height: 56px;
+    width: 97%;
+
+    cursor: pointer;
+
+    background-color: ${({ theme }) => theme.COLORS.BACKGROUND_200};
+    border-radius: 10px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    padding: 0 64px 0 24px;
+
+    span:first-child {
+        font-size: 18px;
+        font-weight: 400;
+    }
+
+    span:nth-child(2) {
+        display: flex;
+        align-items: center;
+        gap: 24px;
     }
 `
