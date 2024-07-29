@@ -4,20 +4,35 @@ import { Button } from "../../../components/Button";
 import { GoBack } from "../../../components/GoBack";
 
 import { useNavigate } from "react-router-dom";
+import { useState } from "react";
 
 import { BsCursorFill } from "react-icons/bs"
 
+import { api } from "../../../services/api";
+import { useEffect } from "react";
+
 
 export function Plans() {
+    const [ plans, setPlans ] = useState([])
+
     const navigate = useNavigate();
 
     function handleNavigateHome() {
         navigate("/")
     }
 
-    function handleDetails() {
-        navigate("/plans/1")
+    function handleDetails(plan_id) {
+        navigate(`/plans/${plan_id}`)
     }
+
+    useEffect(() => {
+        async function FetchPlans() {
+            const response = await api.get(`/plan`)
+            setPlans(response.data.plans)
+        }
+
+        FetchPlans()
+    }, [])
 
     return (
         <Container>
@@ -25,9 +40,6 @@ export function Plans() {
             <Menu>
                 <div className="buttons">
                     <Button title="Turmas" onClick={handleNavigateHome}/>
-                    <Button title="Mensagens"/>
-                    <Button title="Avaliação padronizada"/>
-                    <Button title="Pesquisa de satisfação"/>
                 </div>
             </Menu>
 
@@ -39,13 +51,17 @@ export function Plans() {
             </div>
 
             <main>
-                <Plan onClick={handleDetails}>
-                    <span>Plano de ensivo de Software Básico</span>
-                    <span>
-                        Aguardando análise
-                        <BsCursorFill />
-                    </span>
-                </Plan>
+                {
+                    plans.map(plan => (
+                        <Plan onClick={() => handleDetails(plan.id)}>
+                            <span>Plano de ensivo de {plan.class_name}</span>
+                            <span>
+                                Aguardando análise
+                                <BsCursorFill />
+                            </span>
+                        </Plan>
+                    ))
+                }
             </main>
         </Container>
     )
