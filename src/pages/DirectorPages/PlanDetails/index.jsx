@@ -23,7 +23,7 @@ export function PlanDetails() {
     }
 
     function handlePlanChanges() {
-        navigate("/plans/changes")
+        navigate(`/plans/${params.id}/changes`)
     }
 
     async function handleAprovePlan() {

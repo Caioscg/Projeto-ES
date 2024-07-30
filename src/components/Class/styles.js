@@ -4,7 +4,7 @@ export const Container = styled.div`
     display: flex;
     align-items: center;
 
-    margin: 6px 108px 0;
+    margin: 6px 68px 0;
     padding: 18px 16px 0;
 
     border-bottom: 1px solid ${({ theme }) => theme.COLORS.BACKGROUND_200};
@@ -26,5 +26,9 @@ export const Container = styled.div`
     span {
         width: 100%;
         text-align: left;
+    }
+
+    span:nth-child(2) {
+        margin-left: 42px;
     }
 `

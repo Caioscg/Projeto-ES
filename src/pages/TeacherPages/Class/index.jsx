@@ -73,25 +73,19 @@ export function Class() {
                             <span>Curso</span>
                         </div>
                         <StudentSpan name="Caio Souza" course="Ciência da Computação"/>
-                        <StudentSpan name="Caio Souza" course="Ciência da Computação"/>
-                        <StudentSpan name="Caio Souza" course="Ciência da Computação"/>
-                        <StudentSpan name="Caio Souza" course="Ciência da Computação"/>
-                        <StudentSpan name="Caio Souza" course="Ciência da Computação"/>
-                        <StudentSpan name="Caio Souza" course="Ciência da Computação"/>
-                        <StudentSpan name="Caio Souza" course="Ciência da Computação"/>
-                        <StudentSpan name="Caio Souza" course="Ciência da Computação"/>
-                        <StudentSpan name="Caio Souza" course="Ciência da Computação"/>
-                        <StudentSpan name="Caio Souza" course="Ciência da Computação"/>
-                        <StudentSpan name="Caio Souza" course="Ciência da Computação"/>
-                        <StudentSpan name="Caio Souza" course="Ciência da Computação"/>
-                        <StudentSpan name="Caio Souza" course="Ciência da Computação"/>
-                        <StudentSpan name="Caio Souza" course="Ciência da Computação"/>
-                        <StudentSpan name="Caio Souza" course="Ciência da Computação"/>
-                        <StudentSpan name="Caio Souza" course="Ciência da Computação"/>
-                        <StudentSpan name="Caio Souza" course="Ciência da Computação"/>
-                        <StudentSpan name="Caio Souza" course="Ciência da Computação"/>
-                        <StudentSpan name="Caio Souza" course="Ciência da Computação"/>
-                        <StudentSpan name="Caio Souza" course="Ciência da Computação"/>
+                        <StudentSpan name="João Miguel" course="Ciência da Computação"/>
+                        <StudentSpan name="Maria Silva" course="Ciência da Computação"/>
+                        <StudentSpan name="Pedro Garcia" course="Inteligência Artificial"/>
+                        <StudentSpan name="Paula Lopes" course="Ciência da Computação"/>
+                        <StudentSpan name="Davi Lucas" course="Ciência da Computação"/>
+                        <StudentSpan name="Gabriel Martins" course="Ciência da Computação"/>
+                        <StudentSpan name="Anderson Meidas" course="Ciência da Computação"/>
+                        <StudentSpan name="Vanessa Lunardi" course="Inteligência Artificial"/>
+                        <StudentSpan name="Fabiano Filho" course="Ciência da Computação"/>
+                        <StudentSpan name="Letícia Alvarenga" course="Engenharia de Software"/>
+                        <StudentSpan name="Gustavo Henrique" course="Ciência da Computação"/>
+                        <StudentSpan name="José Ferreira" course="Ciência da Computação"/>
+                        <StudentSpan name="Gabriela Sousa" course="Ciência da Computação"/>
                     </div>
                 </div>
             </main>

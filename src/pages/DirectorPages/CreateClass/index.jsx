@@ -98,12 +98,15 @@ export function CreateClass() {
                             <select id="disciplina" onChange={e => setDiscipline(e.target.value)}>
                                 <optgroup>
                                     <option className="label" selected disabled>Selecione uma matéria:</option>
-                                    <option>Cálculo 1A</option>
-                                    <option>Cálculo 2A</option>
+                                    <option>Introdução à Programação</option>
+                                    <option>Arquitetura de Computadores</option>
                                     <option>Engenharia de Software</option>
                                     <option>Software Básico</option>
-                                    <option>Arquitetura de Computadores</option>
-                                    <option>Álgebra linear</option>
+                                    <option>Linguagens e Paradigmas de Programação</option>
+                                    <option>Banco de Dados</option>
+                                    <option>Algorítmos e Estutura de dados 1</option>
+                                    <option>Algorítmos e Estutura de dados 2</option>
+                                    <option>Sistema de Gerenciamento de Banco de Dados</option>
                                 </optgroup>
                             </select>
                         </div>

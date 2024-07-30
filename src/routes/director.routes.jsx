@@ -13,7 +13,7 @@ export function DirectorRoutes() {
             <Route path="/createclass" element={<CreateClass />} />
             <Route path="/plans" element={<Plans />} />
             <Route path="/plans/:id" element={<PlanDetails />} />
-            <Route path="/plans/changes" element={<PlanChanges />} />
+            <Route path="/plans/:id/changes" element={<PlanChanges />} />
         </Routes>
     )
 }
